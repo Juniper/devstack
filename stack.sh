@@ -1182,6 +1182,13 @@ fi
 
 if is_service_enabled q-svc; then
     echo_summary "Starting Neutron"
+    echo "PAUSING OPENSTACK FOR CONTRAIL TO START,after contrail is up please press 5 enters to resume openstack installation"
+    sleep 10
+    read -e
+    read -e
+    read -e
+    read -e
+    read -e
     start_neutron_service_and_check
     check_neutron_third_party_integration
 elif is_service_enabled $DATABASE_BACKENDS && is_service_enabled n-net; then
